@@ -1,16 +1,13 @@
 <script>
 	import { onMount } from 'svelte';
 	
-	let Thing;
+	let Term;
 	
 	onMount(async () => {
-		Thing = (await import('./Thing.svelte')).default;
+		Term = (await import('./Term.svelte')).default;
 	});
     
 </script>
 
-<svelte:component this={Thing} answer={42}>
-	<p>some slotted content</p>
+<svelte:component this={Term}>
 </svelte:component>
-
-<div id="baz"></div>
