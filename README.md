@@ -1,6 +1,5 @@
 # About
-
-Proof of concept remote terminal using SvelteKit and xterm.js, and spawn(). It creates a terminal with access to the server command line. Browser based unsecure terminal.
+Proof of concept remote terminal using SvelteKit, xterm.js, and spawn(). It creates a terminal with access to the server command line. Browser based unsecure terminal.
 > ⚠️ WARNING!!! If someone hits the correct IP and port, they can run any commands they like on your dev server.
 
 ## Clone this repo
@@ -20,4 +19,3 @@ npm install
 ```
 npm run dev
 ```
-
