@@ -1,13 +1,11 @@
 <script>
-    import { Terminal } from "xterm"
     export let answer;
-
     var userInput = ``;
+    var foo = ``;
     const initTerminal = async () => {
-const term = new Terminal()
 
-        // const { Terminal } = await import("xterm");
-        // const term = new Terminal();
+        const { Terminal } = await import("xterm");
+        const term = new Terminal();
 
         term.open(document.getElementById("terminal"));
 
@@ -22,7 +20,9 @@ const term = new Terminal()
             userInput += e.key;
             // if user inputs return key, process the user input
             if (e.key == `\r`) {
-                    fetch(`http://localhost:3000/${userInput}`).then(
+fetch(`https://3000-timsonner-sveltekitxterm-f2r2iip3v8y.ws-us40.gitpod.io/${userInput}`).then(
+                // https://3000-timsonner-sveltekitxterm-f2r2iip3v8y.ws-us40.gitpod.io/
+                    // fetch(`https://localhost:3000/${userInput}`).then(
                         (response) => {
                             async function concatStringStream(stream) {
                                 let result = ``
@@ -42,17 +42,16 @@ const term = new Terminal()
                                         );
                                         userInput = ``; // reset user input
 
-                               var a = result.split(`,`) // create array from result string   
-                               a.forEach(element => {
+                            //    var a = result.split(`,`) // create array from result string   
+                            //    a.forEach(element => {
 
-                                let char = String.fromCharCode(parseInt(element)); // convert array element from ascii to char
+                            //     let char = String.fromCharCode(parseInt(element)); // convert array element from ascii to char
                                 // ascii 10 is newline, write a \n
                                 
-                            //     if (char.valueOf() == `10`) {
-                            //         term.write(`\n`)
-                            //     }
-                                term.write(`${char}`)
-                               });     
+                                
+                                // term.write(`${char}`)
+                                // console.log(`char is ${char}`)
+                            //    });     
 
                                         return result
                                     }
@@ -63,6 +62,7 @@ const term = new Terminal()
                                         console.log(
                                             `Most recently read chunk: ${value}`
                                             );
+                                            console.log(`value of value is: ${value}`)
                                             term.write(value);
                                             term.write(`\r\n Remote terminal $`);
                                         } // while stream reader has value
@@ -82,8 +82,8 @@ const term = new Terminal()
 </script>
 
 <head>
-    <link rel="stylesheet" href="node_modules/xterm/css/xterm.css" />
-    <script src="node_modules/xterm/lib/xterm.js"></script>
+    <link rel="stylesheet" href="/node_modules/xterm/css/xterm.css" />
+    <script src="/node_modules/xterm/lib/xterm.js"></script>
 </head>
 
 <p>the answer is {answer}</p>
