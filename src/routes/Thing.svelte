@@ -1,7 +1,7 @@
 <script>
     export let answer;
     var userInput = ``;
-    var foo = ``;
+    var url = `https://localhost:3000/`;
     const initTerminal = async () => {
 
         const { Terminal } = await import("xterm");
@@ -20,9 +20,8 @@
             userInput += e.key;
             // if user inputs return key, process the user input
             if (e.key == `\r`) {
-fetch(`https://3000-timsonner-sveltekitxterm-f2r2iip3v8y.ws-us40.gitpod.io/${userInput}`).then(
-                // https://3000-timsonner-sveltekitxterm-f2r2iip3v8y.ws-us40.gitpod.io/
-                    // fetch(`https://localhost:3000/${userInput}`).then(
+
+                    fetch(`${url}${userInput}`).then(
                         (response) => {
                             async function concatStringStream(stream) {
                                 let result = ``
