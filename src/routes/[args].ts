@@ -39,7 +39,7 @@ function makeSystemCall(command) {
 export async function get({ params }) {
     if (api) {
         // create array here from params.args
-        // pretty sure this is slice(), but maybe somthing else
+        // pretty sure this is slice(), but maybe something else
         // take first element from array and place it in 'command' var
         // take every element after first and place in array 'arguments'
         // pass 'command' and 'arguments' to makeSystemCall()
